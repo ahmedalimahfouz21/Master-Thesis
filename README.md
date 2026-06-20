@@ -6,8 +6,10 @@ This repository contains the code, LaTeX sources, and experimental materials for
 
 ## Title
 
-*Multi-Agent Reinforcement Learning in Dynamic Systems*  
-*(Update if final thesis title differs)*
+*Model Based Systems 
+Engineering and 
+Adversarial Multi-Agent 
+Reinforcement Learning*  
 
 ---
 
