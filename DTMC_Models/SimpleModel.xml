@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<model type="DTMC" name="SimpleModel">
+
+        <define-state name="S0"  number="0"  type="transient" state_desirability = "1"/>
+        <define-state name="S1"  number="1"  type="transient" state_desirability = "0"/>
+        <define-state name="S2"  number="2"  type="transient" state_desirability = "-1"/>
+
+        <define-edge from="0" to="1"  value="1.0"/>
+
+        <define-edge from="1" to="0"  value="0.7550983005407649"/>
+        <define-edge from="1" to="2"  value="0.24490169945923515"/>
+
+        <define-edge from="2" to="0"  value="1.0"/>
+
+
+
+</model>

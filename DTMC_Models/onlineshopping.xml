@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<model type="DTMC" name="OnlineShopping">
+
+        
+        <define-state name="S0(login)"             number="0"  type="transient" state_desirability = "1"/>
+        <define-state name="S1(retCustomer)"       number="1"  type="transient" state_desirability = "2"/>
+        <define-state name="S2(retrieve)"          number="2"  type="transient" state_desirability = "2"/>
+        <define-state name="S3(newCustome)"        number="3"  type="transient" state_desirability = "2"/>
+        <define-state name="S4(search)"            number="4"  type="transient" state_desirability = "2"/>
+        <define-state name="S5(authFail)"          number="5"  type="absorbing" state_desirability = "0"/>
+        <define-state name="S6(search)"            number="6"  type="transient" state_desirability = "2"/>
+        <define-state name="S7(addItem)"           number="7"  type="transient" state_desirability = "2"/>
+        <define-state name="S8(payFail)"           number="8"  type="absorbing" state_desirability = "0"/>
+        <define-state name="S9(addItm)"            number="9"  type="transient" state_desirability = "2"/>
+        <define-state name="S10(fastShipping)"     number="10" type="transient" state_desirability = "2"/>
+        <define-state name="S11(pay)"              number="11" type="transient" state_desirability = "2"/>
+        <define-state name="S12(stdShipping)"      number="12" type="transient" state_desirability = "2"/>
+        <define-state name="S13(fastShipFail)"     number="13" type="absorbing" state_desirability = "0"/>
+        <define-state name="S14(logout)"           number="14" type="transient" state_desirability = "2"/>
+        <define-state name="S15(stdShipFail)"      number="15" type="absorbing" state_desirability = "0"/>
+        <define-state name="S16(success)"          number="16" type="absorbing" state_desirability = "3"/>
+
+        <define-edge from="0" to="2" value="0.999" />
+        <define-edge from="0" to="5" value="0.001" />
+    
+        <define-edge from="1" to="4" value="1.000" />
+             
+        <define-edge from="2" to="1" value="0.350" />
+        <define-edge from="2" to="3" value="0.650" />
+
+        
+        <define-edge from="3" to="6" value="1.000" />
+        
+        <define-edge from="4" to="7" value="1.000" />
+        
+        <define-edge from="5" to="5" value="1.000" />
+
+        <define-edge from="6" to="9" value="1.000" />
+        
+        <define-edge from="7" to="4"   value="0.200" />
+        <define-edge from="7" to="10"  value="0.500" />
+        <define-edge from="7" to="12"  value="0.300" />
+        
+        <define-edge from="8" to="8" value="1.000" />
+      
+        <define-edge from="9" to="6"  value="0.150" />
+        <define-edge from="9" to="10" value="0.250" />
+        <define-edge from="9" to="12" value="0.600" />
+        
+        <define-edge from="10" to="11" value="0.999" />
+        <define-edge from="10" to="13" value="0.001" />
+        
+        <define-edge from="11" to="8"  value="0.001" />
+        <define-edge from="11" to="14" value="0.999" />
+        
+        <define-edge from="12" to="11"  value="0.999" />
+        <define-edge from="12" to="15"  value="0.001" />
+        
+        <define-edge from="12" to="11"  value="0.999" />
+        <define-edge from="12" to="15"  value="0.001" />
+        
+        <define-edge from="13" to="13"  value="1.000" />
+        
+        <define-edge from="14" to="5"   value="0.001" />
+        <define-edge from="14" to="16"  value="0.999" />
+        
+        <define-edge from="15" to="15" value="1.000" />
+         
+        <define-edge from="16" to="16" value="1.000" />
+
+        
+                   
+</model>

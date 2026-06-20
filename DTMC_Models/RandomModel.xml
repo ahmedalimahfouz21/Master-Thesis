@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<model type="DTMC" name="RandomModel">
+
+        <define-state name="S0"  number="0"  type="transient" state_undesirability = "-5"/>
+        <define-state name="S1"  number="1"  type="transient" state_undesirability = "-3"/>
+        <define-state name="S2"  number="2"  type="transient" state_undesirability = "-1"/>
+        <define-state name="S3"  number="3"  type="transient" state_undesirability = "-8"/>
+        <define-state name="S4"  number="4"  type="transient" state_undesirability = "-6"/>
+        <define-state name="S5"  number="5"  type="transient" state_undesirability = "-5"/>
+        <define-state name="S6"  number="6"  type="transient" state_undesirability = "-4"/>
+        <define-state name="S7"  number="7"  type="transient" state_undesirability = "-4"/>
+        <define-state name="S8"  number="8"  type="transient" state_undesirability = "-6"/>
+        <define-state name="S9"  number="9"  type="transient" state_undesirability = "-5"/>
+        <define-state name="S10" number="10" type="transient" state_undesirability = "-3"/>
+        <define-state name="S11" number="11" type="transient" state_undesirability = "-6"/>
+        <define-state name="S12" number="12" type="transient" state_undesirability = "4"/>
+        <define-state name="S13" number="13" type="transient" state_undesirability = "3"/>
+        <define-state name="S14" number="14" type="transient" state_undesirability = "7"/>
+        <define-state name="S15" number="15" type="absorbing" state_undesirability = "7"/>
+
+        <define-edge from="0" to="1"  value="1.0"/>
+
+        <define-edge from="1" to="2"  value="0.20213931387288905"/>
+        <define-edge from="1" to="8"  value="0.4996430860745072"/>
+        <define-edge from="1" to="9"  value="0.29821760005260384"/>
+
+        <define-edge from="2" to="3"  value="0.2731297531472083"/>
+        <define-edge from="2" to="9"  value="0.7268702468527918"/>
+
+        <define-edge from="3" to="5"  value="1.0"/>
+
+        <define-edge from="4" to="5"  value="0.3648392244253452"/>
+        <define-edge from="4" to="11" value="0.04636438049926445"/>
+        <define-edge from="4" to="13" value="0.5887963950753903"/>
+
+        <define-edge from="5" to="4"  value="0.555828966468453"/>
+        <define-edge from="5" to="8"  value="0.10908051490454833"/>
+        <define-edge from="5" to="12" value="0.3350905186269986"/>
+
+        <define-edge from="6" to="5"  value="0.41895811992407855"/>
+        <define-edge from="6" to="9"  value="0.5810418800759214"/>
+
+        <define-edge from="7" to="5"  value="0.9965011369828488"/>
+        <define-edge from="7" to="10" value="0.0034988630171512024"/>
+
+        <define-edge from="8" to="2"  value="0.3409635211956687"/>
+        <define-edge from="8" to="4"  value="0.31964388797991083"/>
+        <define-edge from="8" to="14" value="0.33939259082442036"/>
+
+        <define-edge from="9" to="1"  value="0.38188817775432304"/>
+        <define-edge from="9" to="4"  value="0.41990639493238474"/>
+        <define-edge from="9" to="11" value="0.19820542731329213"/>
+
+        <define-edge from="10" to="5"  value="0.5456061112194188"/>
+        <define-edge from="10" to="6"  value="0.14321336884430036"/>
+        <define-edge from="10" to="7"  value="0.3111805199362808"/>
+
+        <define-edge from="11" to="8"  value="0.5152483648994615"/>
+        <define-edge from="11" to="14" value="0.4847516351005385"/>
+
+        <define-edge from="12" to="4"  value="0.2300542903373296"/>
+        <define-edge from="12" to="6"  value="0.7318839094478946"/>
+        <define-edge from="12" to="11" value="0.03806180021477583"/>
+
+        <define-edge from="13" to="1"  value="0.6981569438897035"/>
+        <define-edge from="13" to="10" value="0.30184305611029644"/>
+
+        <define-edge from="14" to="0"  value="0.9"/>
+        <define-edge from="14" to="15" value="0.1"/>
+
+        <define-edge from="15" to="15" value="1.0"/>
+
+
+
+</model>

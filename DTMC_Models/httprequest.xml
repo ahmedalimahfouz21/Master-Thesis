@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<model type="DTMC" name="HTTPRequest">
+
+        <define-state name="S0(ProxyServer)"              number="0" type="transient" state_desirability = "1"/>
+        <define-state name="S1(WebServer)"                number="1" type="transient" state_desirability = "2"/>
+        <define-state name="S2(ApplicationServer)"        number="2" type="transient" state_desirability = "2"/>
+        <define-state name="S3(CacheServer)"              number="3" type="transient" state_desirability = "2"/>
+        <define-state name="S4(FileServer)"               number="4" type="transient" state_desirability = "2"/>
+        <define-state name="S5(CacheServer)"              number="5" type="transient" state_desirability = "2"/>
+        <define-state name="S6(Databsdr)"                 number="6" type="transient" state_desirability = "2"/>
+        <define-state name="S7(ServerUnavailable)"        number="7" type="absorbing" state_desirability = "0"/>
+        <define-state name="S8(HttpResponse)"             number="8" type="absorbing" state_desirability = "3"/>
+        <define-state name="S9(TooManyConnections)"       number="9" type="absorbing" state_desirability = "0"/>
+
+        <define-edge from="0" to="1" value="0.79" />
+        <define-edge from="0" to="3" value="0.19" />
+        <define-edge from="0" to="7" value="0.02" />
+        
+        <define-edge from="1" to="1" value="0.20" />
+        <define-edge from="1" to="2" value="0.55" />
+        <define-edge from="1" to="8" value="0.25" />
+         
+        <define-edge from="2" to="5" value="0.70" />      
+        <define-edge from="2" to="8" value="0.30" />
+
+        
+        <define-edge from="3" to="4" value="0.79" />
+        <define-edge from="3" to="8" value="0.19" />
+        <define-edge from="3" to="9" value="0.02" />
+        
+        <define-edge from="4" to="8" value="0.98" />
+        <define-edge from="4" to="9" value="0.02" />
+        
+        <define-edge from="5" to="6" value="0.19" />
+        <define-edge from="5" to="8" value="0.79" />
+        <define-edge from="5" to="9" value="0.02" />
+     
+        <define-edge from="6" to="8" value="0.98" />
+        <define-edge from="6" to="9" value="0.02" />  
+      
+        <define-edge from="7" to="7" value="1.00" />
+        
+        <define-edge from="8" to="8" value="1.00" />
+        
+        <define-edge from="9" to="9" value="1.00" />
+
+        
+                   
+</model>

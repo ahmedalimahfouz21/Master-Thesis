@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<model type="DTMC" name="TeleAssistance">
+
+        <define-state name="S1(initial)"             number="0" type="transient" state_desirability = "-2"/>
+        <define-state name="S1(request)"             number="1" type="transient" state_desirability = "2"/>
+        <define-state name="S2(medicalAnalysis)"     number="2" type="transient" state_desirability = "1"/>
+        <define-state name="S3(analysisFail)"        number="3" type="transient" state_desirability = "3"/>
+        <define-state name="S4(result)"              number="4" type="transient" state_desirability = "0"/>
+        <define-state name="S5(pharmacy)"            number="5" type="transient" state_desirability = "-1"/>
+        <define-state name="S6(alarm)"               number="6" type="transient" state_desirability = "-1"/>
+        <define-state name="S7(pharmacyFail)"        number="7" type="transient" state_desirability = "3"/>
+        <define-state name="S8(alarmFail)"           number="8" type="transient" state_desirability = "3"/>
+        <define-state name="S9(done)"                number="9" type="transient" state_desirability = "-2"/>
+        <define-state name="S10(end)"                number="10" type="absorbing" state_desirability = "-3"/>
+
+        <define-edge from="0" to="1" value="1.000" />
+        
+        <define-edge from="1" to="2" value="0.900" />
+        <define-edge from="1" to="6" value="0.100" />
+
+        
+        <define-edge from="2" to="3" value="0.0002" />
+        <define-edge from="2" to="4" value="0.9998" />
+
+               
+        <define-edge from="3" to="9" value="1.0000" />
+
+        
+        <define-edge from="4" to="5" value="0.3000" />
+        <define-edge from="4" to="6" value="0.0040" />
+        <define-edge from="4" to="9" value="0.6960" />
+        
+        <define-edge from="5" to="7" value="0.0300" />
+        <define-edge from="5" to="9" value="0.9700" />
+        
+        <define-edge from="6" to="8" value="0.2500" />
+        <define-edge from="6" to="9" value="0.7500" />
+
+        <define-edge from="7" to="9" value="1.0000" />
+        
+        <define-edge from="8" to="9" value="1.0000" />
+        
+        <define-edge from="9" to="10" value="0.0200" />
+        <define-edge from="9" to="0" value="0.9800" />
+        
+        <define-edge from="10" to="10" value="1.0000" />
+
+        
+                   
+</model>
