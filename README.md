@@ -23,12 +23,10 @@ University of Stuttgart
 
 ## Abstract
 
-This thesis investigates multi-agent reinforcement learning (MARL) in dynamic and uncertain environments. The objective is to study how multiple agents can learn cooperative and/or competitive behaviors through interaction while maintaining robustness under uncertainty.
+This thesis combines Model-Based Systems Engineering, Discrete-Time Markov Chains, and Adversarial Multi-Agent Reinforcement Learning and game theory to analyze system safety and resource optimization. It introduces fundamental concepts and a competitive game model where two agents compete to control system states. A Discrete-Time Markov Chain is transformed into a system object. The system object is transformed into a game object integrated into an environment object. The Proximal Policy Optimization model is trained using neural networks. Ten experiments validate the concept and prototype. A path elimination algorithm is presented, with four experiments introduced. This unique framework offers a promising avenue for system safety analysis and resource optimization.
 
-The proposed approach combines reinforcement learning methods with system-level analysis to evaluate coordination strategies and emergent behaviors. Experiments are conducted in simulated environments to assess performance, stability, and scalability.
-
-The results provide insights into distributed decision-making and highlight the challenges of learning-based control in multi-agent systems.
+Keywords: Model-Based Systems Engineering, Discrete-Time Markov Chains, game theory, Adversarial Multi-Agent Reinforcement Learning, Path elimination.
 
 ---
 
-## Repository Structure
+
